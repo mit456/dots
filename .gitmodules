@@ -10,3 +10,9 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git@github.com:tpope/vim-surround.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = git@github.com:fatih/vim-go.git
+[submodule "bundle/node"]
+	path = bundle/node
+	url = git@github.com:moll/vim-node.git
