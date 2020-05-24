@@ -22,3 +22,6 @@
 [submodule "bundle/lint.vim"]
 	path = bundle/lint.vim
 	url = git@github.com:joestelmach/lint.vim.git
+[submodule "bundle/typescript-vim"]
+	path = bundle/typescript-vim
+	url = git@github.com:leafgarland/typescript-vim.git
