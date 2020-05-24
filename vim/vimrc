@@ -1,3 +1,15 @@
+" Vim Plug settings and configurations
+call plug#begin('~/.vim/plugged')
+"JSX, react native
+Plug 'maxmellon/vim-jsx-pretty'
+
+Plug 'mattn/emmet-vim'
+
+" Auto detect indentation
+Plug 'tpope/vim-sleuth'
+call plug#end()
+
+execute pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
 
@@ -44,18 +56,91 @@ filetype plugin on
 "autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
 "autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
 
-
 " FileType based settings
-autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
-autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+"autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
+"autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 "autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 "autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType less setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType php setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab
+"autocmd FileType less setlocal ts=2 sts=2 sw=2 expandtab
+"autocmd FileType php setlocal ts=2 sts=2 sw=2 expandtab
+"autocmd FileType xml setlocal ts=2 sts=2 sw=2 expandtab
+"autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab
 "autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
+"VIM PACKAGE CONFS: START
+"
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+"VIM PACKAGE CONFS: END
+
+"Programming language based configuration: START
+" golang: Configuration
+"
+" nodejs: Configuration
+set runtimepath^=~/.vim/bundle/node
+"autocmd User Node if &filetype == "javascript" | setlocal expandtab | endif
+
+" CSS
+"let csslint_options_file = '~/.vim/bundle/lint.vim/js/csslint/options.js'
+
+"JSX:Configurations
+let g:vim_jsx_pretty_highlight_close_tag = 0
+let g:jsx_ext_required = 0
+let g:vim_jsx_pretty_template_tags = ['html', 'jsx']
+autocmd FileType js setlocal ts=2 sts=2 sw=2 expandtab
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
+
+
+"let g:closetag_xhtml_filetypes = 'xhtml,javascript.jsx,jsx'
+"autocmd BufNewFile,BufRead *.js set filetype=javascript.jsx
+"autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+"let g:closetag_shortcut = '>'
+
+
+
+" ts:Configuration
+let g:typescript_indent_disable = 1
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+autocmd FileType typescript :set makeprg=tsc
+
+" js: Configuration
+"let jshint_options_file = '~/.vim/bundle/lint.vim/js/jshint/options.js'
+set runtimepath+=~/.vim/bundle/jshint2.vim/
+
+let g:javascript_plugin_jsdoc = 1   "Syntax highlighting for JSDocs
+let g:javascript_plugin_ngdoc = 1   "Syntax highlighting for NGDocs
+let g:javascript_plugin_flow = 1    "Syntax highlighting for flow
+
+set conceallevel=1
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒"
+"let g:javascript_conceal_noarg_arrow_function = "🞅"
+"let g:javascript_conceal_underscore_arrow_function = "🞅"
+
+
+" yaml: Configuration
+au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
+
+" Programming language based configuration: END
+
+
+" Keyboard based configuration
 let mapleader = "\<space>"
 
 " Spell check
