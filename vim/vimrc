@@ -7,6 +7,7 @@ Plug 'mattn/emmet-vim'
 
 " Auto detect indentation
 Plug 'tpope/vim-sleuth'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 call plug#end()
 
 execute pathogen#infect()
@@ -136,6 +137,13 @@ let g:javascript_conceal_arrow_function       = "⇒"
 
 " yaml: Configuration
 au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/yaml.vim
+" yaml: Configuration end
+
+" python: Configuration start
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_checkers = ['python']
+" python: Configuration end
+
 
 " Programming language based configuration: END
 
@@ -174,14 +182,14 @@ nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
 
 " STOP using arrow keys!
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
 
 " Buffers - next/previous: F12, Shift-F12.
 nnoremap <silent> <F12> :bn<CR>
