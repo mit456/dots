@@ -8,6 +8,9 @@ Plug 'mattn/emmet-vim'
 " Auto detect indentation
 Plug 'tpope/vim-sleuth'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+
+" syntastic
+Plug 'scrooloose/syntastic'
 call plug#end()
 
 "execute pathogen#infect()
