@@ -10,9 +10,9 @@ Plug 'tpope/vim-sleuth'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 call plug#end()
 
-execute pathogen#infect()
-call pathogen#incubate()
-call pathogen#helptags()
+"execute pathogen#infect()
+"call pathogen#incubate()
+"call pathogen#helptags()
 
 set encoding=utf8 "utf8 as standard
 
