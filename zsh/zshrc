@@ -146,3 +146,10 @@ prompt_svn() {
 
 # Remove username@computer
 prompt_context() {}
+
+# Load aliases
+if [ -f ~/.zsh/zshalias ]; then
+    source ~/.zsh/zshalias
+else
+    print "404: ~/.zsh/zshalias not found."
+fi
