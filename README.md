@@ -9,3 +9,4 @@ Faster reliable development environment setup.
 5. Copy `autoload`, `bundle` into `~/.vim`. 
 6. Copy `colors/vim-colors-solorized/colors/solarized.vim` to `~/.vim/colors/`.
 7. Open a file in vim, `vim test.txt` and run `PlugInstall`.
+8. Use for powerline installtion - https://gist.github.com/joeizang/05bc2e0d7d2d1d4d50c03ffef575ac31
