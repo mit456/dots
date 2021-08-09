@@ -16,6 +16,9 @@ Plug 'ervandew/supertab'
 
 " For colorscheme
 Plug 'morhetz/gruvbox'
+Plug 'powerline/powerline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 "execute pathogen#infect()
